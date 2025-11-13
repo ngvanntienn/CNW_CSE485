@@ -1,0 +1,1 @@
+Khi khai báo hàm trong PHP, tại sao ta có thể trả về giá trị bằng return, thay vì chỉ in ra bằng echo?
