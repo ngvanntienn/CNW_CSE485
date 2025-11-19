@@ -3,10 +3,10 @@
     session_start();
 
     // TODO 2: Kiểm tra xem SESSION (lưu tên đăng nhập) có tồn tại không? 
-    if (isset($_SESSION['Tien']))
+    if (isset($_SESSION['ngvanntienn']))
     {
         // TODO 3: Nếu tồn tại, lấy username từ SESSION ra 
-        $loggedInUser = $_SESSION['Tien'];
+        $loggedInUser = $_SESSION['ngvanntienn'];
 
         // TODO 4: In ra lời chào mừng 
         echo "<h1>Chào mừng trở lại, $loggedInUser!</h1>";
@@ -22,4 +22,5 @@
         header('Location: login.html');
         exit;
     }
+
 ?>
