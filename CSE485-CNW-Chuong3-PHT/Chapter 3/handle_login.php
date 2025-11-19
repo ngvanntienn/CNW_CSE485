@@ -15,7 +15,7 @@
         if ($user == 'ngvanntienn' && $pass == '123456')
         {
             // TODO 5: Nếu thành công, lưu tên username vào SESSION 
-            $_SESSION['Tien'] = $user;
+            $_SESSION['ngvanntienn'] = $user;
 
             // TODO 6: Chuyển hướng người dùng sang trang "chào mừng"
             header('Location: welcome.php');
@@ -37,4 +37,5 @@
         header('Location: login.html');
         exit;
     }
+
 ?>
