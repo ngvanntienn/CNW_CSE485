@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài thi trắc nghiệm</title>
+    <title>Bài 2</title>
     <style>
         body {
             font-family: 'Segoe UI',sans-serif;
@@ -133,5 +133,6 @@
     </div>
 </body>
 </html>
+
 
 
