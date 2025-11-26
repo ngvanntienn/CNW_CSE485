@@ -1,0 +1,8 @@
+CREATE TABLE loai_hoa (
+    id INT(15) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    description VARCHAR(2000) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ALTER TABLE `loai_hoa` AUTO_INCREMENT = 15;
