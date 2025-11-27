@@ -1,28 +1,29 @@
 <?php
-include "../connect.php";
-if(isset($_POST['upload'])){
-    $file = $_FILES['file_csv']['tmp_name'];
-    if(($handle = fopen($file, "r")) !== FALSE)
+    include_once '../FileManager.php';
+    if (isset($_POST['upload']))
     {
-        $row = 0;
-        while(($data = fgetcsv($handle, 1000, ",")) !== FALSE)
-        {
-            if($row == 0)
-            { 
-                $row++; 
-                continue; 
-            } 
-
-            $sql = "INSERT INTO excelcsv (username, password, lastname, firstname, city, email, course1) VALUES 
-            ('$data[0]', '$data[1]', '$data[2]', '$data[3]', '$data[4]', '$data[5]', '$data[6]')";
-            mysqli_query($conn, $sql);
-        }   
-        fclose($handle);
-        
+        $db = new Database();
+        $fileManager = new FileManager($db);
+        if (!empty($_FILES['file_csv']['tmp_name'])) {
+            $file = $_FILES['file_csv']['tmp_name'];
+            if (($handle = fopen($file, 'r')) !== FALSE)
+            {
+                $row = 0;
+                while ($data = fgetcsv($handle, 1000,','))
+                {
+                    $username = $data[0];
+                    $password = $data[1];
+                    $lastname  = $data[2];
+                    $firstname = $data[3];
+                    $city = $data[4];
+                    $email = $data[5];
+                    $course1 = $data[6];
+                    $fileManager->filecsv($username, $password, $lastname, $firstname, $city, $email, $course1);
+                }
+            }
+        }
+        header('Location: index.php');
     }
-    header("Location: index.php?success=created");
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
