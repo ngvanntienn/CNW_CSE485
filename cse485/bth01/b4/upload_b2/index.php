@@ -1,23 +1,36 @@
 <?php
-include "../connect.php";
+    require_once '../FileManager.php';
+    if (isset($_POST['upload']))
+    {
+        $db = new Database();
+        $fileManager = new FileManager($db);
 
-if(isset($_POST['upload_txt'])){
-    $file = $_FILES['txt_file']['tmp_name'];
-    $lines = file($file, FILE_IGNORE_NEW_LINES);
+        if (!empty($_FILES['file_txt']['tmp_name']))
+        {
+            $file = $_FILES['file_txt']['tmp_name'];
+            $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES); 
+            
+            foreach ($lines as $line)
+            {
+                $rows = explode('|', $line);
+                
+                if (count($rows)==6)
+                {
+                    $question = $row[0];
+                    $choice_a = $row[1];
+                    $choice_b = $row[2];
+                    $choice_c = $row[3];
+                    $choice_d = $row[4];
+                    $answer = $row[5];
+                    $fileManager->filetxt($rows[0], $rows[1], $rows[2], $rows[3], $rows[4], $rows[5]);
 
-    foreach($lines as $line){
-        $parts = explode('|', $line); 
-        if(count($parts) == 6){
-            $sql = "INSERT INTO questions (question, choice, choice_b, choice_c, choice_d, answer)
-                    VALUES ('$parts[1]', '$parts[2]', '$parts[3]', '$parts[4]', '$parts[5]', '$parts[6]')";
-            mysqli_query($conn, $sql);
+                }
+            }
         }
+        header('Location: index.php');
     }
-    header("Location: index.php?success=created");
-    exit;
-}
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
