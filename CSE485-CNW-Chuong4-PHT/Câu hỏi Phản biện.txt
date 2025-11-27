@@ -1,0 +1,1 @@
+Tại sao việc sử dụng PDO lại giúp ngăn chặn hoàn toàn SQL Injection, trong khi việc tự lọc ký tự đặc biệt trong PHP vẫn có thể bị tấn công?
