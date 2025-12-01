@@ -1,0 +1,1 @@
+Trong MVC, điều gì sẽ xảy ra nếu Controller phụ thuộc vào View cụ thể(ví dụ: gọi đúng tên file HTML)?
