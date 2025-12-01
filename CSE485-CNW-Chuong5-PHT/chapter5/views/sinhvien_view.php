@@ -32,7 +32,7 @@
 </head>
 <body>
     <h2>Thêm sinh viên mới (Kiến trúc MVC)</h2>
-    <form action = "chapter4.php" method = "POST" enctype = "multipart/form-data">
+    <form action = "index.php" method = "POST" enctype = "multipart/form-data">
         <label>Tên sinh viên:</label> 
         <input type="text" name="ten_sinh_vien" required> 
         <br>
@@ -64,4 +64,5 @@
         <?php endforeach; ?>
     </table>
 </body>
+
 </html>
