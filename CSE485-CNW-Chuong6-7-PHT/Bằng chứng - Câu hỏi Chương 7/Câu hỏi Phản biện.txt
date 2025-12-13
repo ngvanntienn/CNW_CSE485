@@ -1,0 +1,3 @@
+Hãy giải thích sự khác nhau giữa @yield('content') và @section('content') trong Blade. Nếu tôi tạo thêm một @section('sidebar') 
+trong view con nhưng layout không có @yield('sidebar'), 
+điều gì sẽ xảy ra khi render trang?
