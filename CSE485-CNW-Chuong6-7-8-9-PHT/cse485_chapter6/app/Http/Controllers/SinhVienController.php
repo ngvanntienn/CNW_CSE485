@@ -30,6 +30,6 @@ class SinhVienController extends Controller
 
     // TODO 15: Chuyển hướng về trang danh sách
     // Gợi ý: return redirect()->route('sinhvien.index');
-    return redirect()->route(sinhvien.index);
+    return redirect()->route('sinhvien.index');
     }
 } 

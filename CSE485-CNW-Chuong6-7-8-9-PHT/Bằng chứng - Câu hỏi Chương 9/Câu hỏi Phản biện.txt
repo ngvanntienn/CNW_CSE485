@@ -1,0 +1,1 @@
+Khi cần giới hạn “chỉ Admin mới được truy cập trang quản trị”, ta nên dùng cơ chế nào và vì sao không nên chỉ dùng auth?
